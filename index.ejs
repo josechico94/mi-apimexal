@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Artículos</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 80%; margin: auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid black; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Lista de Artículos</h1>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+        </tr>
+        <% if (articoli.length > 0) { %>
+            <% articoli.forEach(articolo => { %>
+                <tr>
+                    <td><%= articolo.codice %></td>
+                    <td><%= articolo.descrizione %></td>
+                    <td><%= articolo.prezzo %></td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+            <tr>
+                <td colspan="3">No hay artículos disponibles</td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
